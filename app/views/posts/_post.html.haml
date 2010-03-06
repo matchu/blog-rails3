@@ -1,2 +1,4 @@
-%h2= link_to post.title, post
-.post-body= raw post.body
+- div_for post do
+  %h2= link_to post.title, post
+  .post-date== #{time_ago_in_words post.created_at} ago
+  .post-body= raw post.body

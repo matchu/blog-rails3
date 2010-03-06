@@ -63,3 +63,22 @@ label {
   font-size: 12px;
   list-style: square;
 }
+
+#posts .post:first-child {
+  border-top: 1px solid #ccc;
+}
+
+#posts .post {
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+.post h2 {
+  margin: 0;
+}
+
+.post-date {
+  font-size: 80%;
+  margin-bottom: 1em;
+}

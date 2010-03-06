@@ -1,6 +1,8 @@
 BlogRails3::Application.routes.draw do |map|
   resources :posts
   
+  match 'login' => 'session#login', :as => 'login'
+  
   root :to => 'posts#index'
 
   # The priority is based upon order of creation:

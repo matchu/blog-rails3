@@ -9,3 +9,5 @@
     %h1= link_to 'Matchusian Bloggage', root_path
     %p.notice= notice
     = yield
+    - unless is_admin?
+      = link_to 'Admin login', login_path(:to => request.path)

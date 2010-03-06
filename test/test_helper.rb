@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'redgreen'
+require 'yaml'
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'rails/test_help'
@@ -12,4 +13,17 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  def send_bad_credentials
+    send_credentials('BAD', 'CREDENTIALS')
+  end
+  
+  def send_good_credentials
+    admin = YAML.load_file(File.join(Rails.root, 'config', 'admin.yml'))
+    send_credentials(admin['username'], admin['password'])
+  end
+  
+  def send_credentials(username, password)
+    @request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials(username, password)
+  end
 end
