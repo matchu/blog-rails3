@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title Matchusian Bloggage *insert post title*
+    = stylesheet_link_tag 'scaffold'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    %h1= link_to 'Matchusian Bloggage', root_path
+    %p.notice= notice
+    = yield
