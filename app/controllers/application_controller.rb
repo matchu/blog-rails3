@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   end
   
   def validate_admin(username, password)
-    admin = YAML.load_file(File.join(Rails.root, 'config', 'admin.yml'))
-    username == admin['username'] && password == admin['password']
+    username == 'matchusian' && password == 'bloggage'
   end
 end

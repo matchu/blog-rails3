@@ -19,8 +19,7 @@ class ActiveSupport::TestCase
   end
   
   def send_good_credentials
-    admin = YAML.load_file(File.join(Rails.root, 'config', 'admin.yml'))
-    send_credentials(admin['username'], admin['password'])
+    send_credentials('matchusian', 'bloggage')
   end
   
   def send_credentials(username, password)
