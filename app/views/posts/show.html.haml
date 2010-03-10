@@ -1,4 +1,4 @@
-= render @post
+= render :partial => 'post', :locals => {:summarize => false, :post => @post}
 - if is_admin?
   = link_to 'Edit', edit_post_path(@post)
   |

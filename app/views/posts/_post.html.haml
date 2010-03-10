@@ -1,4 +1,5 @@
+- body = summarize ? truncate_html(post.body) : post.body
 - div_for post do
   %h2= link_to post.title, post
   .post-date== #{time_ago_in_words post.created_at} ago
-  .post-body= raw post.body
+  .post-body= raw body
