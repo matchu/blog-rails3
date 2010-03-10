@@ -1,3 +1,5 @@
+= post_pagination
 #posts= render :partial => 'post', :collection => @posts, :locals => {:summarize => true}
+= post_pagination
 - if is_admin?
   = link_to 'New post', new_post_path
